@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 const Schema = mongoose.Schema;
 
 let Questions = null;
@@ -10,6 +11,7 @@ let Answers = null;
 
 app.use(cors());
 app.use( bodyParser.json() );
+app.use(express.static('../client/build')); // Needed for serving production build of React
 
 // QUESTIONS
 app.get('/questions', async (req, res) => {
@@ -74,6 +76,12 @@ app.post('/vote', async (req, res) => {
 
     });
 });
+
+// "Redirect" all get requests (except for the routes specified above) to React's entry point (index.html) to be handled by Reach router
+// It's important to specify this route as the very last one to prevent overriding all of the other routes
+app.get('*', (req, res) =>
+    res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
+);
 
 const port = process.env.PORT || 8080;
 const url = process.env.MONGO_URL || 'mongodb://localhost/awp_mandatory';
