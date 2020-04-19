@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Questions from './Questions';
 import Question from './Question';
-
+import './App.css';
 import { Router } from "@reach/router";
 
 class App extends Component {

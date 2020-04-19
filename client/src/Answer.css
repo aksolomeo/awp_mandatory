@@ -1,0 +1,35 @@
+
+
+.Answer {
+    display: flex;
+    padding-bottom: 26px;
+}
+
+.Answer__vote-wrapper {
+    display: flex;
+    margin-right: 20px;
+}
+
+.Answer__arrow-button-up {
+    cursor: pointer;
+}
+
+.Answer__vote-answer {
+    min-width: 40px;
+    text-align: center;
+}
+
+.Answer__vote-answer  p {
+    margin: 0px;
+}
+
+.Answer__arrow-button-down {
+    cursor: pointer;
+}
+
+.Answer__answer-text-wrapper {
+    text-align: left;
+    width: 400px;
+    word-break: break-word;
+    margin-right: 20px;
+}

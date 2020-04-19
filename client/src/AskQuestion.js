@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './AskQuestion.css';
 
 class AskQuestion extends Component {
     constructor(props) {
@@ -20,10 +21,10 @@ class AskQuestion extends Component {
 
     render() {
         return (
-            <>
-                <input type="text" placeholder="your question" onChange={this.updateQuestion}/>
-                <button onClick={() => this.submit()}>Submit</button>
-            </>
+            <div className="AskQuestion__input-wrapper">
+                <input className="AskQuestion__input" type="text" onChange={this.updateQuestion}/>
+                <button className="AskQuestion__button" onClick={() => this.submit()}>Submit</button>
+            </div>
         );
     }
 }

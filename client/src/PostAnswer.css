@@ -1,0 +1,17 @@
+.PostAnswer__input-wrapper {
+    align-items: stretch;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.PostAnswer__input {
+    height: 22px;
+    font-size: 18px;
+    margin-right: 12px;
+    width: 80%;
+}
+
+.PostAnswer__button {
+    height: 28px;
+    font-size: 18px;
+}

@@ -1,0 +1,18 @@
+.Question__back-arrow {
+    font-size: 34px;
+    color: black;
+    unerline: none;
+    text-decoration: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+}
+
+.Question__question-list-wrapper{
+    min-width: 500px;
+}
+
+.Question__h1 {
+    margin: 0px 0px 30px;
+}

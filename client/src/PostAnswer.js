@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './PostAnswer.css';
 
 class PostAnswer extends Component {
     constructor(props) {
@@ -20,10 +21,10 @@ class PostAnswer extends Component {
 
     render() {
         return (
-            <>
-                <input type="text" placeholder="your answer" onChange={this.updateAnswer}/>
-                <button onClick={() => this.submit()}>Submit</button>
-            </>
+            <div className="PostAnswer__input-wrapper">
+                <input className="PostAnswer__input" placeholder="Write your answer here" type="text" onChange={this.updateAnswer}/>
+                <button className="PostAnswer__button" onClick={() => this.submit()}>Submit</button>
+            </div>
         );
     }
 }
