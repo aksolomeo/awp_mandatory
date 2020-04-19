@@ -14,12 +14,12 @@ app.use( bodyParser.json() );
 app.use(express.static('../client/build')); // Needed for serving production build of React
 
 // QUESTIONS
-app.get('/questions', async (req, res) => {
+app.get('/api/questions', async (req, res) => {
     const all = await Questions.find({}).populate("answers"); // populate gives array of objects instead of IDs
     res.json(all);
 });
 
-app.post('/questions', async (req, res) => {
+app.post('/api/questions', async (req, res) => {
 
     let question = new Questions({ question: req.body.question });
 
@@ -33,12 +33,12 @@ app.post('/questions', async (req, res) => {
 });
 
 // ANSWERS
-app.get('/answers', async (req, res) => {
+app.get('/api/answers', async (req, res) => {
     const all = await Answers.find({});
     res.json(all);
 });
 
-app.post('/answers', async (req, res) => {
+app.post('/api/answers', async (req, res) => {
 
     let answer = new Answers({ answer: req.body.answer });
 
@@ -55,7 +55,7 @@ app.post('/answers', async (req, res) => {
 });
 
 // VOTES
-app.post('/vote', async (req, res) => {
+app.post('/api/vote', async (req, res) => {
     const answerID = req.body.id;
     const isUpvote = req.body.upvote;
 
